@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlockPulse</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light-gray text-dark-gray font-sans">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-teal-500 to-cyan-600 text-white py-6 shadow-lg">
+    <div class="container mx-auto text-center px-4">
+      <h1 class="text-3xl md:text-4xl font-bold">BlockPulse</h1>
+      <!-- Dark Mode Toggle -->
+      <button id="darkModeToggle" class="bg-white dark:bg-gray-700 text-black dark:text-white px-4 py-2 rounded-lg shadow-md transition">
+        Toggle Dark Mode
+      </button>
+      <nav class="mt-4">
+        <ul class="flex flex-wrap justify-center space-x-4 md:space-x-6">
+          <li><a href="#" id="navDashboard" class="hover:bg-teal-600 text-sm md:text-lg px-3 md:px-4 py-2 rounded transition">Dashboard</a></li>
+          <li><a href="#" id="navBlocks" class="hover:bg-teal-600 text-sm md:text-lg px-3 md:px-4 py-2 rounded transition">Blocks</a></li>
+          <li><a href="#" id="navTransactions" class="hover:bg-teal-600 text-sm md:text-lg px-3 md:px-4 py-2 rounded transition">Transactions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 md:px-6 py-8">
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-teal-700 text-center md:text-left">Latest Blocks</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto mb-8 rounded-lg shadow-md hover-effect bg-white">
+          <thead class="bg-teal-500 text-white">
+            <tr>
+              <th class="py-2 px-2 md:py-3 md:px-4">Time</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Height</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Transactions</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Hash</th>
+            </tr>
+          </thead>
+          <tbody id="blocksTable" class="text-dark-gray"></tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-teal-700 text-center md:text-left">Latest Transactions</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto rounded-lg shadow-md hover-effect bg-white">
+          <thead class="bg-teal-500 text-white">
+            <tr>
+              <th class="py-2 px-2 md:py-3 md:px-4">Time</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Amount</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Sender</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Recipient</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Hash</th>
+            </tr>
+          </thead>
+          <tbody id="dashboardTransactionsTable" class="text-dark-gray"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Blocks Section -->
+    <section id="blocksSection" style="display: none;">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-teal-700 text-center md:text-left">MTW Blocks</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto rounded-lg shadow-md hover-effect bg-white">
+          <thead class="bg-teal-500 text-white">
+            <tr>
+              <th class="py-2 px-2 md:py-3 md:px-4">Time</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Height</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Transactions</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Hash</th>
+            </tr>
+          </thead>
+          <tbody id="blocksTable1" class="text-dark-gray"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Transactions Section -->
+    <section id="transactionsSection" style="display: none;">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-teal-700 text-center md:text-left">Transactions</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto rounded-lg shadow-md hover-effect bg-white">
+          <thead class="bg-teal-500 text-white">
+            <tr>
+              <th class="py-2 px-2 md:py-3 md:px-4">Time</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Amount</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Sender</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Recipient</th>
+              <th class="py-2 px-2 md:py-3 md:px-4">Hash</th>
+            </tr>
+          </thead>
+          <tbody id="transactionsTable" class="text-dark-gray"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-cyan-600 to-teal-500 text-white text-center py-4 shadow-lg">
+    <p>&copy; 2024 BlockPulse. All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>
